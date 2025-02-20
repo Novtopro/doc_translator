@@ -54,5 +54,38 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
+
+  # Frameworks and libraries for testing
+  # https://github.com/rspec/rspec-rails
+  gem "factory_bot_rails"
+  gem "faker"
+  gem "rspec-rails", "~> 7.1.0"
+  gem "shoulda"
+  gem "webmock"
+  gem "vcr", "~> 6.3.1"
 end
 
+# A simple, standardized way to build and use Service Objects (aka Commands) in Ruby
+# https://github.com/nebulab/simple_command.git
+gem "simple_command"
+
+# Run ONNX models in Ruby
+# https://github.com/ankane/onnxruntime-ruby/tree/master?tab=readme-ov-file
+gem "onnxruntime"
+
+# Versatile PDF creation and manipulation for Ruby
+# https://github.com/gettalong/hexapdf
+# https://hexapdf.gettalong.org/
+gem "hexapdf"
+
+# High-level image processing wrapper for libvips and ImageMagick/GraphicsMagick
+# https://github.com/janko/image_processing
+gem "image_processing"
+
+# Calling Python functions from the Ruby language
+# https://github.com/mrkn/pycall.rb
+gem "pycall"
+
+# Numpy wrapper for Ruby
+# https://github.com/mrkn/numpy.rb
+gem "numpy"
