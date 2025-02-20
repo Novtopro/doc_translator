@@ -51,11 +51,10 @@ class TranslateCommand
       pixels = Numpy.expand_dims(pixels, axis: 0)
 
       predictions = model.predict({ images: pixels }).dig("output0", 0)
-      predictions = predictions.map { |it| normalize(prediction: it, gain:, pad_x:, pad_y:) }.compact
+      predictions = predictions.map { |it| normalize(prediction: it, height: doc.pages[0].box.height, gain:, pad_x:, pad_y:) }.compact
 
       page = doc.pages[0]
       canvas = page.canvas(type: :overlay)
-
 
       predictions.each do |it|
         canvas
@@ -91,14 +90,14 @@ class TranslateCommand
     @names ||= JSON.parse(model_metadata.dig(:custom_metadata_map, :names).gsub("'", '"').gsub(/(\d):/, '"\1":'))
   end
 
-  def normalize(prediction:, gain:, pad_x:, pad_y:)
+  def normalize(prediction:, gain:, height:, pad_x:, pad_y:)
     llx, lly, urx, ury, confidence, type = prediction
     return if confidence < 0.25
 
     llx = (llx - pad_x) / gain
-    lly = (lly - pad_y) / gain
+    lly = height - (lly - pad_y) / gain
     urx = (urx - pad_x) / gain
-    ury = (ury - pad_y) / gain
+    ury = height - (ury - pad_y) / gain
     name = names[type.to_i.to_s]
 
     { llx:, lly:, urx:, ury:, name: }
