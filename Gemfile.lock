@@ -110,9 +110,9 @@ GEM
       railties (>= 5.0.0)
     faker (3.5.1)
       i18n (>= 1.8.11, < 2)
-    ffi (1.17.1-aarch64-linux-gnu)
-    ffi (1.17.1-arm64-darwin)
-    ffi (1.17.1-x86_64-linux-gnu)
+    ffi (1.17.2-aarch64-linux-gnu)
+    ffi (1.17.2-arm64-darwin)
+    ffi (1.17.2-x86_64-linux-gnu)
     fugit (1.11.1)
       et-orbi (~> 1, >= 1.2.11)
       raabro (~> 1.4)
@@ -195,11 +195,11 @@ GEM
       racc (~> 1.4)
     numpy (0.4.0)
       pycall (>= 1.2.0.beta1)
-    onnxruntime (0.9.3-aarch64-linux)
+    onnxruntime (0.10.0-aarch64-linux)
       ffi
-    onnxruntime (0.9.3-arm64-darwin)
+    onnxruntime (0.10.0-arm64-darwin)
       ffi
-    onnxruntime (0.9.3-x86_64-linux)
+    onnxruntime (0.10.0-x86_64-linux)
       ffi
     openssl (3.3.0)
     ostruct (0.6.1)
